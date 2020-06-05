@@ -1,0 +1,124 @@
+h1 {
+  line-height: 1.2;
+  margin-bottom: 35px;
+  text-align: center;
+  font-size: 30px;
+}
+
+body {
+  margin:20px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.messaging {
+  width: 455px;
+  margin:auto;
+  border: 1px solid #D0D3D6;
+}
+
+.messages {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.speech-bubble-ds__arrow {
+  border-left: 21px solid transparent;
+  border-top: 20px solid rgba(0, 0, 0, 0.2);
+  bottom: -25px;
+  position: absolute;
+  right: 15px;
+
+  &::before {
+    border-left: 23px solid transparent;
+    border-top: 23px solid #a7a7a7;
+    bottom: 2px;
+    content: "";
+    position: absolute;
+    right: 5px;
+  }
+  &::after {
+    border-left: 21px solid transparent;
+    border-top: 21px solid #efefef;
+    bottom: 4px;
+    content: "";
+    position: absolute;
+    right: 6px;
+  }
+}
+
+
+.messages li {
+  display: inline-block;
+  max-width: 75%;
+  margin: 0 8px 8px 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #0073B1;
+  color: black;
+   background: #efefef;
+  border: 1px solid #a7a7a7;
+  border-radius: 4px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+  line-height: 1.3;
+  max-width: 400px;
+  padding: 15px;
+  position: relative;
+
+  p {
+    margin-bottom: 10px;
+
+    :last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  
+}
+
+.messages.move li {
+  animation: slideUp 0.167s cubic-bezier(.4,0,.2,1);
+}
+
+.messages.move li:last-child {
+  animation: slideUpAndRight 0.167s cubic-bezier(.4,0,.2,1);
+}
+
+.compose {
+  border-top: 2px solid #0091CA;
+  overflow: hidden;
+}
+
+.compose textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 16px;
+  resize: none;
+  outline: none;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(44px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes slideUpAndRight {
+  from {
+    transform: translateX(-100px) translateY(44px);
+  }
+  to {
+    transform: none;
+  }
+}
